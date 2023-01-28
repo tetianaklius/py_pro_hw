@@ -19,7 +19,7 @@ card = "7878 0239 8695 4768"
 
 
 def card_validation(card: str):
-    pattern = r"^(\d{4})( |-)?(\d{4})( |-)?(\d{4})( |-)?(\d{4})( |-)?$"
+    pattern = r"^(\d{4}[ -]?){3}\d{4}$"
     result = re.search(pattern, card)
     return result
 
@@ -40,7 +40,7 @@ str_text = "09hdgj-_dbh04@gmail.com"
 
 
 def match_email(str_text: str):
-    pattern = r"^[A-Za-z0-9]+(\w|(-{1}))\w*@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}$"
+    pattern = r"^[A-Za-z0-9]{1}(-?[A-Za-z0-9_]){1,63}@(-?[A-Za-z0-9])+(\.[A-Za-z0-9]+)$"
     result = re.search(pattern, str_text)
     return result
 
@@ -58,7 +58,7 @@ login = "55gky9fo59"
 
 
 def check_login(login):
-    pattern = r"^(\w|\d){2,10}$"
+    pattern = r"^[A-Za-z0-9]{2,10}$"
     result = re.search(pattern, login)
     return result
 
